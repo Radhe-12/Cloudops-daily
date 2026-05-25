@@ -1,27 +1,37 @@
 export default function AboutPage() {
-    return (
-      <div className="p-10">
-        <h1 className="text-4xl font-bold">
-          About Us
-        </h1>
-  
-        <p className="mt-4">
-          CloudOps Daily shares DevOps, Cloud and AI content.
+
+  return (
+    <main className="max-w-4xl mx-auto p-10">
+
+      <h1 className="text-5xl font-bold mb-8">
+        About CloudOps Daily 🚀
+      </h1>
+
+      <div className="space-y-6 text-lg leading-8 text-gray-700">
+
+        <p>
+          CloudOps Daily is a modern full-stack tech blogging platform
+          focused on DevOps, Cloud Computing, Docker, Kubernetes,
+          AWS, Linux, and modern infrastructure technologies.
         </p>
+        <p>
+          This project was built using Next.js 16, PostgreSQL,
+          Prisma ORM, and Tailwind CSS with a production-style
+          architecture and responsive design.
+        </p>
+
+        <p>
+          Features include dynamic article publishing, admin dashboard,
+          responsive UI, image-based articles, and database-driven routing.
+        </p>
+
+        <p>
+          Built by a DevOps Engineer passionate about cloud infrastructure,
+          automation, CI/CD pipelines, Kubernetes, and scalable systems.
+        </p>
+
       </div>
-    );
-  }
 
-<div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-10">
-
-<div className="bg-white p-6 rounded-xl shadow">
-  <h3 className="text-2xl font-bold">
-    Docker Guide
-  </h3>
-
-  <p className="mt-2 text-gray-600">
-    Learn Docker basics step by step.
-  </p>
-</div>
-
-</div>
+    </main>
+  );
+}
