@@ -1,33 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
+
 
 export default function AdminPage() {
-
-  const router = useRouter();
-  const [checked, setChecked] = useState(false);
-  
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const savedpassword = localStorage.getItem("admin-auth");
-
-    if (savedpassword === "true") return;
-
-    const password = prompt("Enter Admin Password");
-
-    if (password === "cloudops123") {
-
-      localStorage.setItem("admin-auth", "true");
-
-      window.location.reload();
-
-    } else {
-      router.push("/");
-    } 
-
-  }, []);
   
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
