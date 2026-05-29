@@ -19,5 +19,6 @@ model Post {
   slug      String   @unique
   content   String
   imageUrl  String?
+  isDeleted Boolean @default(false)
   createdAt DateTime @default(now())
 }

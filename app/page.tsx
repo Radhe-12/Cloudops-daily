@@ -1,3 +1,4 @@
+import AutoRefresh from "@/components/AutoRefresh";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 import Link from "next/link";
@@ -6,6 +7,10 @@ import { prisma } from "../lib/prisma";
 export default async function HomePage() {
 
   const posts = await prisma.post.findMany({
+    where: {
+      isDeleted: false,
+
+    },
     orderBy: {
       createdAt: "desc",
     },
@@ -16,6 +21,7 @@ export default async function HomePage() {
 
   return (
     <main className="p-10 max-w-6xl mx-auto">
+      <AutoRefresh />
 
       <section className="mb-16 text-center py-20">
 

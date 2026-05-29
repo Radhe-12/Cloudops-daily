@@ -1,7 +1,22 @@
 import { prisma } from "../../../lib/prisma";
 import { NextResponse } from "next/server";
 
+export async function GET() {
+
+  const posts = await prisma.post.findMany({
+    where: {
+      isDeleted: false,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+
+  return NextResponse.json(posts);
+}
+
 export async function POST(request: Request) {
+
   try {
 
     const body = await request.json();
@@ -12,7 +27,6 @@ export async function POST(request: Request) {
         slug: body.slug,
         content: body.content,
         imageUrl: body.imageUrl,
-        
       },
     });
 
